@@ -1,6 +1,6 @@
 # GrokkingDeepLearning
 
-![book](media/book.jpg)
+![book](https://img11.360buyimg.com/n1/jfs/t1/89178/15/9284/103564/5e0da9caEb051c1a0/ca3d632e1f3f7aab.jpg)
 
 图片来自[京东商城](https://img11.360buyimg.com/n1/jfs/t1/89178/15/9284/103564/5e0da9caEb051c1a0/ca3d632e1f3f7aab.jpg)
 
