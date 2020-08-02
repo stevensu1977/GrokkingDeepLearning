@@ -88,10 +88,60 @@
    
    ```
 
-5. 如何进行多个输出?
+5. 进行多个输出, 假设我需要输出[胜率,是否受伤, 粉丝是否增长],我需要增加2个额外的权重, 这种权重就变成了一个矩阵
+
+   ```python
+   矩阵
+   weights = [[0.1,0.2,0],
+             [0,5.0.8,0], #是否受伤
+             [0,0.8,0.4]] #粉丝是否增长
+   
+   toes = [8.5,9.5,9.9,9.0]  #每个队员脚趾平均数,
+   wirec = [0.65,0.8,0.8,0.9] #胜率百分比
+   nfans = [1.2,1.3,0.5,1.0] #粉丝,以百万计
+   
+   def w_sum(a,b):
+       output=0
+       for i in range(len(a)): #遍历数组,将每项input * 每项weight,然后求和
+         output+=a[i]*b[i] 
+       return output
+     
+   def neural_network(input, weights):
+       prediction=[0,0,0]
+       for i in range(weights):
+           prediction[i]=w_sum(input,weights[i])
+       return prediction
+   
+   number_of_toes = [8.5 , 9.5,10, 9]
+   input = [toes[0],wirec[0],nfans[0]]
+   
+   pred = neural_network(input, weights)
+   print(pred)
+   ```
 
    
 
 6. 用预测结果进一步预测 (神经网络的堆叠,从1到100不是梦)
 
+   可以将预测的结果做进一步的预测,这样我们的网络就可以堆叠了.
    
+   ```python
+   ....
+   input = [toes[0],wirec[0],nfans[0]] #可以将input等同于layer0
+   layer0 = input
+   
+   pred_1 = neural_network(input, weights) #将pred预测结果看作layer1
+   
+   layer1 = pred_1
+   
+   pred_2 = neural_network(layger_1, weights_2) #使用layer2的权重
+   #以此类推实现任意数量的堆叠,
+   #MNIST 数据集 就是 [784,][784,40],[40,10],[10,]经过2层之后输出为[10,],但是为啥实例使用的是40而不是60,50, 这个问题还需要进一步学习.
+   ```
+   
+7. 总结
+
+   正向传播, 输入*权重 = 输出/预测,  输出/预测又可以作为下一个网络的输出进行新的输出/预测,  输入层，标准层/隐藏层, 输出层, 通过激活函数(后面章节会讲述),模拟神经元.  
+
+
+​    
