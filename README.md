@@ -15,5 +15,5 @@
 1.  [这本书是我想要的吗?](reading-notes/这本书是我想要的吗？.md)
 2.  [机器学习入门概念](reading-notes/机器学习入门概念.md)
 3.  [神经网络预测导论前向传播(forward)](reading-notes/神经网络预测导论前向传播(forward).md)
-4.  [学习、梯度下降、反向传播(back propagation)](reading-notes/反向传播(back propagation).md)
+4.  [学习、梯度下降、反向传播(backpropagation)](reading-notes/反向传播(back propagation).md)
 
